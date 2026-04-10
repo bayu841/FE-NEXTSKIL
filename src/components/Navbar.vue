@@ -1,0 +1,49 @@
+<script setup>
+import { ref } from "vue";
+
+const isOpen = ref(false);
+</script>
+
+<template>
+  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+    <div class="flex justify-between items-center px-6 py-4">
+
+      <!-- Logo -->
+      <h1 class="text-xl font-bold text-blue-600">
+        NextSklill
+      </h1>
+
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex gap-6 text-gray-700 font-medium">
+        <li class="hover:text-blue-500 cursor-pointer">Beranda</li>
+        <li class="hover:text-blue-500 cursor-pointer">Kelas</li>
+        <li class="hover:text-blue-500 cursor-pointer">Berita</li>
+        <li class="hover:text-blue-500 cursor-pointer">FAQ</li>
+      </ul>
+        <button class="hidden md:block text-white px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:to-blue-400">
+      Login
+    </button>
+
+      <!-- Hamburger Button -->
+      <button 
+        @click="isOpen = !isOpen"
+        class="md:hidden text-gray-700"
+      >
+        ☰
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div v-if="isOpen" class="md:hidden px-6 pb-4">
+      <ul class="flex flex-col gap-4 text-gray-700 font-medium">
+        <li>Beranda</li>
+        <li>Kelas</li>
+        <li>Berita</li>
+        <li>FAQ</li>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+      Login
+     </button>
+      </ul>
+    </div>
+  </nav>
+</template> 
