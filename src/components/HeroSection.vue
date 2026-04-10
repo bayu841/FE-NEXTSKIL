@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
-import heroBg from '../assets/images/herobg.png'
 
 // FULL TEXT (gabung semua)
 const fullText = "Belajar Coding Lebih Mudah di NextSkill";
@@ -39,15 +38,12 @@ const highlightText = computed(() => {
 });
 </script>
 <template>
-     <section class="pt-24 px-6 bg-no-repeat bg-right bg-contain"
-         :style="{ backgroundImage: `url(${heroBg})` }"
-
->
+     <section class="min-h-screen flex items-center px-6 pt-12 bg-no-repeat bg-right bg-cover bg-gradient-to-r from-[#f4f4f4]  via-[#fbffff] to-[#e8fafa]">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-20">
     
     <!-- KIRI (TEXT) -->
-    <div class="md:w-1/2 text-center md:text-left px-10">
-      <h1 class="font-poppins text-4xl md:text-5xl font-bold leading-tight">
+    <div class="md:w-1/2 text-center md:text-left px-12 py-3">
+      <h1 class="font-poppins text-4xl md:text-5xl font-bold leading-tight text-gray-900 gap-3">
             {{ beforeText }}
           <span class="text-blue-600">{{ highlightText }}</span>
       </h1>
@@ -59,7 +55,7 @@ const highlightText = computed(() => {
       <div class="mt-6 flex justify-center md:justify-start gap-4">
         <button class="bg-gradient-to-r from-blue-600 to-indigo-600 
         text-white px-6 py-3 rounded-lg 
-        hover:scale-105 transition">
+        hover:translate-y-[-4px] transition">
           Mulai Belajar
         </button>
 
@@ -74,7 +70,7 @@ const highlightText = computed(() => {
   <img 
     src="/src/assets/images/hero.png" 
     alt="Hero Image"
-    class="w-full max-w-md mx-auto py-3 transition-all duration-700 ease-out"
+    class="w-full max-w-md mx-auto  transition-all duration-700 ease-out"
     :class="showImage 
       ? 'opacity-100 translate-y-0' 
       : 'opacity-0 translate-y-10'"
