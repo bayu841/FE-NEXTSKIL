@@ -21,7 +21,7 @@ import { BookOpen, Zap, Target, Code2, LineChart, Award } from "lucide-vue-next"
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto font-poppins">
 
       <!-- CARD 1 -->
-      <div class="p-6 bg-blue-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+      <div class="p-6 bg-gray-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-4">
           <BookOpen class="w-6 h-6 text-blue-600" />
         </div>
@@ -32,7 +32,7 @@ import { BookOpen, Zap, Target, Code2, LineChart, Award } from "lucide-vue-next"
       </div>
 
       <!-- CARD 2 -->
-      <div class="p-6 bg-blue-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+      <div class="p-6 bg-gray-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-4">
           <Zap class="w-6 h-6 text-blue-600" />
         </div>
@@ -43,7 +43,7 @@ import { BookOpen, Zap, Target, Code2, LineChart, Award } from "lucide-vue-next"
       </div>
 
       <!-- CARD 3 -->
-      <div class="p-6 bg-blue-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+      <div class="p-6 bg-gray-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-4">
           <Target class="w-6 h-6 text-blue-600" />
         </div>
@@ -54,7 +54,7 @@ import { BookOpen, Zap, Target, Code2, LineChart, Award } from "lucide-vue-next"
       </div>
 
       <!-- CARD 4 -->
-      <div class="p-6 bg-blue-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+      <div class="p-6 bg-gray-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-4">
           <Code2 class="w-6 h-6 text-blue-600" />
         </div>
@@ -65,7 +65,7 @@ import { BookOpen, Zap, Target, Code2, LineChart, Award } from "lucide-vue-next"
       </div>
 
       <!-- CARD 5 -->
-      <div class="p-6 bg-blue-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+      <div class="p-6 bg-gray-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-4">
           <LineChart class="w-6 h-6 text-blue-600" />
         </div>
@@ -76,7 +76,7 @@ import { BookOpen, Zap, Target, Code2, LineChart, Award } from "lucide-vue-next"
       </div>
 
       <!-- CARD 6 -->
-      <div class="p-6 bg-blue-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
+      <div class="p-6 bg-gray-50 rounded-xl text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-4">
           <Award class="w-6 h-6 text-blue-600" />
         </div>
