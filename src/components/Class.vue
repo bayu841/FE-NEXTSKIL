@@ -4,7 +4,7 @@ import ShinyText from "../components/ShinyText.vue";
 </script>
 
 <template>
-  <section class="text-center py-16 bg-[url('/src/assets/images/clasbg.png')] bg-cover bg-center">
+  <section class="text-center py-16 bg-blue-50 bg-cover bg-center">
     <ShinyText
       text="Jelajahi Kelas Teratas"
       color="#1d4ed8"

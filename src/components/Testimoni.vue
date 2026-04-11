@@ -1,54 +1,73 @@
 <template>
-      <section class="text-center py-16 bg-[url('/src/assets/images/testimoni.png')] bg-cover bg-center h-[100%] p-5 md:p-20">
-<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+  <section class="py-16 bg-[url('/src/assets/images/testimoni.png')] bg-cover bg-center p-5 md:p-20">
     
-    <!-- TEXT (KIRI) -->
-    <div class="text-center md:text-left">
-      <p class="text-blue-500 font-medium mb-2">Testimoni</p>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       
-      <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 font-poppins">
-        Apa Kata Pengguna <br>
-        <span class="text-blue-500">NextSkill ?</span>
-      </h2>
+      <!-- TEXT (KIRI) -->
+      <div class="text-center md:text-left">
+        <p class="text-blue-500 font-medium mb-2">Testimoni</p>
+        
+        <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 font-poppins">
+          Apa Kata Pengguna <br>
+          <span class="text-blue-500">NextSkill?</span>
+        </h2>
 
-      <p class="text-gray-600 mb-6">
-        Kami menyediakan berbagai fitur unggulan yang membantu kamu belajar coding dengan lebih efektif, terarah, dan menyenangkan.
-      </p>
+        <p class="text-gray-600 mb-6">
+          Banyak pengguna telah merasakan kemudahan belajar coding bersama kami. Berikut pengalaman mereka.
+        </p>
+      </div>
+
+      <!-- TESTIMONI CARD -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <!-- Card 1 -->
+        <div class="bg-white/80 backdrop-blur p-5 rounded-xl shadow hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://i.pravatar.cc/40?img=1" class="w-10 h-10 rounded-full" />
+            <div>
+              <p class="font-semibold text-sm">Andi</p>
+              <p class="text-xs text-gray-500">Mahasiswa</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600">
+            Belajar di NextSkill jadi lebih mudah dipahami. Materinya jelas dan step by step!
+          </p>
+          <div class="text-yellow-400 mt-2">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white/80 backdrop-blur p-5 rounded-xl shadow hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://i.pravatar.cc/40?img=2" class="w-10 h-10 rounded-full" />
+            <div>
+              <p class="font-semibold text-sm">Siti</p>
+              <p class="text-xs text-gray-500">Pelajar</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600">
+            Platformnya interaktif dan nggak membosankan. Cocok banget buat pemula.
+          </p>
+          <div class="text-yellow-400 mt-2">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white/80 backdrop-blur p-5 rounded-xl shadow hover:shadow-lg transition sm:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://i.pravatar.cc/40?img=3" class="w-10 h-10 rounded-full" />
+            <div>
+              <p class="font-semibold text-sm">Rizky</p>
+              <p class="text-xs text-gray-500">Freelancer</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600">
+            Sangat membantu meningkatkan skill coding saya. Sekarang lebih percaya diri ambil project!
+          </p>
+          <div class="text-yellow-400 mt-2">⭐⭐⭐⭐⭐</div>
+        </div>
+
+      </div>
+
     </div>
 
-    <!-- CARD (KANAN) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      
-      <!-- Card 1 -->
-      <div class="bg-blue-100 p-5 rounded-xl hover:shadow-lg hover:-translate-y-2 transition duration-300">
-        <div class="text-2xl mb-3">📚</div>
-        <h3 class="font-semibold mb-2">Materi Lengkap</h3>
-        <p class="text-sm text-gray-600">
-          Materi disusun dari dasar hingga mahir.
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-blue-100 p-5 rounded-xl hover:shadow-lg hover:-translate-y-2 transition duration-300">
-        <div class="text-2xl mb-3">⚡</div>
-        <h3 class="font-semibold mb-2">Belajar Cepat</h3>
-        <p class="text-sm text-gray-600">
-          Metode belajar yang efektif dan efisien.
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-blue-100 p-5 rounded-xl hover:shadow-lg hover:-translate-y-2 transition duration-300 sm:col-span-2">
-        <div class="text-2xl mb-3">🎯</div>
-        <h3 class="font-semibold mb-2">Fokus Skill</h3>
-        <p class="text-sm text-gray-600">
-          Fokus pada skill yang dibutuhkan di dunia kerja.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-      </section>    
+  </section>
 </template>

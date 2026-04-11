@@ -12,33 +12,40 @@ onMounted(() => {
         isVisible.value = true;
       }
     },
-    { threshold: 0.6}
+    { threshold: 0.5 }
   );
 
   if (section) observer.observe(section);
 });
 </script>
+
 <template>
-  <section id="about"
-  class="py-40 px-6 transition-all duration-500"
-  :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
-    <div class="max-w-6xl mx-auto grid md:  grid-cols-2 gap-10 items-center">
+  <section 
+    id="about"
+    class="py-20 md:py-40 px-4 md:px-6 transition-all duration-500"
+    :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
+  >
+    <!-- FIX TYPO DI SINI -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       
-        <!-- IMAGE -->
-        <div 
-          class="flex justify-center transition-all duration-500 delay-200"
-          :class="isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'"
-          >
-          <img 
-            src="../assets/images/logo.png"
-            alt="About Image"
-            class="w-80"
-          />
-        </div>
+      <!-- IMAGE -->
+      <div 
+        class="flex justify-center transition-all duration-500 delay-200"
+        :class="isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'"
+      >
+        <img 
+          src="../assets/images/logo.png"
+          alt="About Image"
+          class="w-40 sm:w-56 md:w-80"
+        />
+      </div>
 
       <!-- TEXT -->
       <div>
-        <p class="font-bold text-blue-500 py-2 font-medium">Tentang Kami</p>
+        <p class="text-blue-500 font-medium py-2">
+          Tentang Kami
+        </p>
+
         <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 font-poppins">
           Apa Itu NextSkill ?
         </h1>
@@ -55,7 +62,3 @@ onMounted(() => {
     </div>
   </section>
 </template>
-
-<style scoped>
-/* tambahan styling jika diperlukan */
-</style>
