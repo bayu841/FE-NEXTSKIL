@@ -54,7 +54,7 @@
         <div class="bg-white/80 backdrop-blur p-5 rounded-xl shadow hover:shadow-lg transition sm:col-span-2">
           <div class="flex items-center gap-3 mb-3">
             <img src="https://i.pravatar.cc/40?img=3" class="w-10 h-10 rounded-full" />
-            <div>
+            <div>       
               <p class="font-semibold text-sm">Rizky</p>
               <p class="text-xs text-gray-500">Freelancer</p>
             </div>
