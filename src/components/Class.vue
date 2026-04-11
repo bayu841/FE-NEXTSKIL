@@ -9,7 +9,7 @@ import ShinyText from "../components/ShinyText.vue";
       text="Jelajahi Kelas Teratas"
       color="#1d4ed8"
       shineColor="#60a5fa"
-      className="text-4xl font-semibold font-poppins pb-4"
+      className="text-3xl font-semibold font-poppins pb-4"
     />
     <section class="max-w-6xl mx-auto px-10 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
        <div class="p-7 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 text-start mb-3">

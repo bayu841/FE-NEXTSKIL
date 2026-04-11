@@ -4,6 +4,9 @@ import About from "../components/About.vue";
 import AppLayout from "../layouts/AppLayout.vue";
 import Class from "../components/Class.vue";
 import Features from "../components/Features.vue";
+import Benefit from "../components/Benefit.vue";
+import Footer from "../components/Footer.vue";
+import Testimoni from "../components/Testimoni.vue";
 </script>
 
 <template>
@@ -11,6 +14,9 @@ import Features from "../components/Features.vue";
     <HeroSection />
     <About />
     <Class />
+    <Benefit />
     <Features />
+    <Testimoni />
+    <Footer />
   </AppLayout>
 </template>

@@ -39,7 +39,7 @@ onMounted(() => {
       <!-- TEXT -->
       <div>
         <p class="font-bold text-blue-500 py-2 font-medium">Tentang Kami</p>
-        <h1 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6 font-poppins">
+        <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 font-poppins">
           Apa Itu NextSkill ?
         </h1>
 

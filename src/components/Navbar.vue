@@ -5,7 +5,7 @@ const isOpen = ref(false);
 </script>
 
 <template>
-  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50 px-12">
+  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50 px-12 font-poppins">
     <div class="flex justify-between items-center px-6 py-4">
 
       <!-- Logo -->

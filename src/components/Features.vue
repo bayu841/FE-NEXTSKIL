@@ -1,55 +1,67 @@
-<script setup>
-
-</script>
 <template>
-  <section id="about"
-  class="py-40 px-6 transition-all duration-500">
-    <div class="max-w-6xl mx-auto grid md:  grid-cols-2 gap-10 items-center">
-      
-        
-        <!-- IMAGE -->
-        <div 
-          class="flex justify-center transition-all duration-500 delay-200">
-          <img 
-            src="../assets/images/classhero.png"
-            alt="About Image"
-            class="w-full max-w-sm float"
-          />
-        </div>
-      <!-- TEXT -->
-      <div>
-      <p class="text-blue-500 font-medium py-2">Benefit</p>
-        <h1 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4 font-poppins leading-tight">
-            Banyak
-            <span class="bg-blue-600 text-white px-2 mr-2 rounded-md font-semibold">
-                Benefit
-            </span> 
-            yang Bisa Kamu Dapatkan
-        </h1>
+  <section class="text-center px-6 mb-40">
+  <p class="text-blue-500 font-medium py-2">Fitur Unggulan</p>
+  <h2 class="text-3xl font-semibold mb-10 font-poppins text-gray-800">
+    Upgrade Skill Mu Bersama Fitur <br>
+    Unggulan NextSkill
+  </h2>
 
-        <p class="text-base text-gray-600 mb-4">
-              Belajar materi jadi lebih mudah, cepat, dan menyenangkan dengan platform kami yang dirancang khusus untuk mendukung perkembangan skill kamu.
-        </p>
-        <ul class="space-y-3 text-gray-700">
-          <li class="flex items-center gap-2">
-            <span class="text-blue-600 font-bold">✔</span>
-            Materi mudah dipahami untuk pemula
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-blue-600 font-bold">✔</span>
-            Akses belajar kapan saja dan di mana saja
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-blue-600 font-bold">✔</span>
-            Pembelajaran interaktif dan tidak membosankan
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-blue-600 font-bold">✔</span>
-            Mendukung peningkatan skill secara bertahap
-          </li>
-        </ul>
-      </div>
-
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-7 max-w-6xl mx-auto font-poppins">
+    
+    <!-- Card 1 -->
+    <div class="p-6 bg-blue-100 rounded-xl hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4 text-3xl">📚</div>
+      <h3 class="font-semibold text-lg mb-2">Materi Terstruktur</h3>
+      <p class="text-gray-600 text-sm">
+        Belajar dengan materi yang tersusun rapi dari dasar hingga mahir.
+      </p>
     </div>
-  </section>
+
+    <!-- Card 2 -->
+    <div class="p-6 bg-blue-100 rounded-xl hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4 text-3xl">⚡</div>
+      <h3 class="font-semibold text-lg mb-2">Belajar Cepat</h3>
+      <p class="text-gray-600 text-sm">
+        Metode pembelajaran yang membantu kamu memahami materi lebih cepat.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="p-6 bg-blue-100 rounded-xl hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4 text-3xl">🎯</div>
+      <h3 class="font-semibold text-lg mb-2">Fokus Skill</h3>
+      <p class="text-gray-600 text-sm">
+        Fokus pada skill yang benar-benar dibutuhkan di dunia kerja.
+      </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="p-6 bg-blue-100 rounded-xl hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4 text-3xl">🧑‍💻</div>
+      <h3 class="font-semibold text-lg mb-2">Praktik Langsung</h3>
+      <p class="text-gray-600 text-sm">
+        Belajar dengan praktik langsung agar lebih mudah dipahami.
+      </p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="p-6 bg-blue-100 rounded-xl hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4 text-3xl">📈</div>
+      <h3 class="font-semibold text-lg mb-2">Progress Tracking</h3>
+      <p class="text-gray-600 text-sm">
+        Pantau perkembangan belajar kamu secara real-time.
+      </p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="p-6 bg-blue-100 rounded-xl hover:shadow-lg transition">
+      <div class="text-blue-600 mb-4 text-3xl">🏆</div>
+      <h3 class="font-semibold text-lg mb-2">Sertifikat</h3>
+      <p class="text-gray-600 text-sm">
+        Dapatkan sertifikat sebagai bukti kemampuan kamu.
+      </p>
+    </div>
+
+  </div>
+</section>
 </template>
