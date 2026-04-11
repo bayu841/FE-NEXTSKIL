@@ -11,7 +11,6 @@
 
 body {
   margin: 0;
-  
 }
 
 #app {
@@ -26,4 +25,16 @@ body {
 }
 .float {
   animation: float 2s ease-in-out infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 6s linear infinite;
 }

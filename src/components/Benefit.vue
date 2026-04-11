@@ -2,8 +2,11 @@
 </script>
 
 <template>
+  <div class="flex justify-end">
+  <img src="../assets/images/pattern4.png" alt="" class="w-16 mr-20 mt-10 spin">
+  </div>
   <section 
-    class="py-20 md:py-40 px-4 md:px-6 transition-all duration-500 mb-4"
+    class="px-4 md:px-6 transition-all duration-500 mb-10"
   >
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       
@@ -53,7 +56,7 @@
           </li>
         </ul>
       </div>
-
     </div>
   </section>
+  <img src="../assets/images/pattern5.png" alt="" class="w-16 ml-20 float">
 </template>

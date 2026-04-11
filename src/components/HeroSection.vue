@@ -82,7 +82,7 @@ const highlightText = computed(() => {
             : 'opacity-0 translate-y-10'"
         />
       </div>
-
     </div>
   </section>
+  <img src="../assets/images/pattern2.png" alt="" class="w-[200px] rotate-12">
 </template>

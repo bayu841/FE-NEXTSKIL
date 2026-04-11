@@ -1,12 +1,15 @@
 <template>
-  <section class="text-center px-6 mb-40">
-  <p class="text-blue-500 font-medium py-2">Fitur Unggulan</p>
+  <div class="flex justify-end">
+  <img src="../assets/images/pattern6.png" alt="" class="w-[180px] ">
+  </div>
+  <section class="text-center px-6 mb-16">
+  <p class="text-blue-500 font-medium mb-2">Fitur Unggulan</p>
   <h2 class="text-3xl font-semibold mb-10 font-poppins text-gray-800">
     Upgrade Skill Mu Bersama Fitur <br>
     Unggulan NextSkill
   </h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-7 max-w-6xl mx-auto font-poppins">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6  max-w-6xl mx-auto font-poppins">
     
     <!-- Card 1 -->
     <div class="p-6 bg-blue-100 rounded-xl hover:shadow-lg transition">
@@ -61,7 +64,7 @@
         Dapatkan sertifikat sebagai bukti kemampuan kamu.
       </p>
     </div>
-
   </div>
 </section>
+  <img src="../assets/images/pattern7.png" alt="" class="w-[100px] float mb-2 ml-3 ">
 </template>

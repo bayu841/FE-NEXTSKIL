@@ -22,7 +22,7 @@ onMounted(() => {
 <template>
   <section 
     id="about"
-    class="py-20 md:py-40 px-4 md:px-6 transition-all duration-500"
+    class="py-14 px-20 md:px-6 transition-all duration-500"
     :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
   >
     <!-- FIX TYPO DI SINI -->
@@ -42,14 +42,15 @@ onMounted(() => {
 
       <!-- TEXT -->
       <div>
-        <p class="text-blue-500 font-medium py-2">
+        <p class="text-blue-500 font-medium">
           Tentang Kami
         </p>
-
-        <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 font-poppins">
-          Apa Itu NextSkill ?
-        </h1>
-
+        <div class="flex items-center gap-20 mb-2">
+          <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 font-poppins">
+            Apa Itu NextSkill ?
+          </h1>
+          <img src="../assets/images/pattern1.png" alt="" class="w-[69px] float">
+       </div>
         <p class="text-gray-600 mb-4">
           Kami adalah platform pembelajaran online yang membantu kamu belajar coding dengan cara yang lebih mudah, cepat, dan menyenangkan.
         </p>
