@@ -1,8 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { Plus, Trash2, ArrowLeft, HelpCircle, Layout, ListFilter, Save, CheckCircle2 } from 'lucide-vue-next'
+import { Plus, Trash2, ArrowLeft, CheckCircle2, Save } from 'lucide-vue-next'
+import { ListFilter } from 'lucide-vue-next'
 import BaseModal from '../../../components/shared/BaseModal.vue'
+import MultipleChoiceBuilder from '../../../components/mentor/courses/quiz/MultipleChoiceBuilder.vue'
+import MatchingBuilder from '../../../components/mentor/courses/quiz/MatchingBuilder.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -71,14 +74,6 @@ const addQuestion = (type = 'multiple-choice') => {
       }
     })
   }
-}
-
-const addMatchingItem = (qIdx) => {
-  const q = questions[qIdx]
-  const newId = q.leftItems.length + 1
-  q.leftItems.push({ id: 'l' + newId, text: '' })
-  q.rightItems.push({ id: 'r' + newId, text: '' })
-  q.pairs['l' + newId] = 'r' + newId
 }
 
 const handleSubmit = () => {
@@ -179,68 +174,10 @@ const handleModalConfirm = () => {
           </div>
 
           <!-- TYPE: MULTIPLE CHOICE -->
-          <div v-if="q.type === 'multiple-choice'" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div v-for="(_, oIdx) in q.options" :key="oIdx" class="relative group/option flex items-center">
-              <div 
-                class="w-10 h-10 shrink-0 rounded-lg flex items-center justify-center font-bold text-sm mr-3 transition-colors"
-                :class="q.correctIndex === oIdx ? 'bg-emerald-500 text-white' : 'bg-gray-100 text-gray-500 border border-gray-200'"
-              >
-                {{ String.fromCharCode(65 + oIdx) }}
-              </div>
-              <input 
-                v-model="q.options[oIdx]"
-                class="w-full px-4 py-2.5 bg-white border rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all text-sm font-medium text-gray-700"
-                :class="q.correctIndex === oIdx ? 'border-emerald-300' : 'border-gray-200'"
-                :placeholder="'Jawaban ' + String.fromCharCode(65 + oIdx)"
-              />
-              <div class="absolute right-3 translate-y-1/2 bottom-1/2 flex items-center justify-center">
-                <button 
-                    @click="q.correctIndex = oIdx"
-                    title="Tandai Sebagai Jawaban Benar"
-                    class="p-1.5 rounded-lg transition-colors bg-white"
-                    :class="q.correctIndex === oIdx ? 'text-emerald-500' : 'text-gray-300 hover:text-emerald-500'"
-                >
-                    <CheckCircle2 class="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
+          <MultipleChoiceBuilder v-if="q.type === 'multiple-choice'" :question="q" />
 
           <!-- TYPE: MATCHING -->
-          <div v-else-if="q.type === 'matching'" class="space-y-4">
-            <div v-for="(item, iIdx) in q.leftItems" :key="iIdx" class="flex gap-3 items-center">
-              <div class="flex-1">
-                <label class="block text-xs font-bold text-gray-500 mb-1" v-if="iIdx===0">Premis (Kiri)</label>
-                <input 
-                  v-model="q.leftItems[iIdx].text"
-                  class="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg focus:border-indigo-500 outline-none transition-all text-sm"
-                  placeholder="Contoh: HTML"
-                />
-              </div>
-              <div class="text-gray-400 flex items-center justify-center mt-5">
-                <Layout class="w-4 h-4" />
-              </div>
-              <div class="flex-1 pb-0 relative">
-                <label class="block text-xs font-bold text-emerald-600 mb-1" v-if="iIdx===0">Pasangan (Kanan)</label>
-                <input 
-                  v-model="q.rightItems[iIdx].text"
-                  class="w-full px-3 py-2.5 bg-emerald-50 border border-emerald-200 rounded-lg focus:border-emerald-500 outline-none transition-all text-sm text-emerald-800"
-                  placeholder="Contoh: Menampilkan Struktur"
-                />
-                <button @click="q.leftItems.splice(iIdx, 1); q.rightItems.splice(iIdx, 1); delete q.pairs[q.leftItems[iIdx].id]" class="absolute -right-8 top-1/2 mt-2.5 -translate-y-1/2 text-gray-400 hover:text-red-500 transition-colors">
-                    <Trash2 class="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-            <!-- ADD PAIR -->
-            <button 
-              @click="addMatchingItem(qIdx)"
-              class="w-full py-3 border-2 border-dashed border-gray-200 mt-2 rounded-xl text-gray-500 hover:border-indigo-300 hover:text-indigo-600 hover:bg-gray-50 transition-colors font-medium text-sm flex items-center justify-center gap-2"
-            >
-              <Plus class="w-4 h-4" />
-              Tambah Pasangan
-            </button>
-          </div>
+          <MatchingBuilder v-else-if="q.type === 'matching'" :question="q" />
 
         </div>
       </div>
