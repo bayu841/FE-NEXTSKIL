@@ -19,7 +19,6 @@ import CourseList from "../views/admin/courses/CourseList.vue";
 import CourseCreate from "../views/admin/courses/CourseCreate.vue";
 import CourseEdit from "../views/admin/courses/CourseEdit.vue";
 import CategoryList from "../views/admin/categories/CategoryList.vue";
-import CourseApproval from "../views/admin/courses/CourseApproval.vue";
 import ManageTransaction from "../views/admin/transactions/TransactionList.vue";
 import AdminSettings from "../views/admin/Settings.vue";
 
@@ -45,6 +44,8 @@ import MentorLayout_M from "../views/mentor/Layout.vue";
 import MentorDashboard_M from "../views/mentor/Dashboard.vue";
 
 import CourseList_M from "../views/mentor/courses/CourseList.vue";
+import UploadMaterial_M from "../views/mentor/courses/UploadMaterial.vue";
+import UploadQuiz_M from "../views/mentor/courses/UploadQuiz.vue";
 
 // Mentor Students
 import StudentList_M from "../views/mentor/students/StudentList.vue";
@@ -126,11 +127,6 @@ const routes = [
         component: CourseEdit,
       },
       {
-        path: "courses/approvals",
-        name: "admin.courses.approvals",
-        component: CourseApproval,
-      },
-      {
         path: "categories",
         name: "admin.categories.list",
         component: CategoryList,
@@ -138,6 +134,11 @@ const routes = [
 
       // Mentors Management
       { path: "mentors", name: "admin.mentors.list", component: MentorList },
+      {
+        path: "mentors/verification",
+        name: "admin.mentors.verification",
+        component: MentorVerification,
+      },
 
       // Students
       { path: "students", name: "admin.students.list", component: UserList },
@@ -175,6 +176,16 @@ const routes = [
 
       // Courses Management
       { path: "courses", name: "mentor.courses.list", component: CourseList_M },
+      {
+        path: "courses/:courseId/upload-material",
+        name: "mentor.courses.upload-material",
+        component: UploadMaterial_M,
+      },
+      {
+        path: "courses/:courseId/upload-quiz",
+        name: "mentor.courses.upload-quiz",
+        component: UploadQuiz_M,
+      },
 
       // Assignments
       {
