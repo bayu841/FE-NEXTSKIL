@@ -14,14 +14,35 @@ const isOpen = ref(false);
 
       <!-- Menu Desktop -->
       <ul class="hidden md:flex gap-8 text-gray-700 font-medium">
-        <li class="hover:text-blue-500 cursor-pointer">Beranda</li>
-        <li class="hover:text-blue-500 cursor-pointer">Kelas</li>
-        <li class="hover:text-blue-500 cursor-pointer">Berita</li>
-        <li class="hover:text-blue-500 cursor-pointer">FAQ</li>
+        <li>
+        <router-link to="/" class="hover:text-blue-500">
+          Beranda
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="/class" class="hover:text-blue-500">
+          Kelas
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="/news" class="hover:text-blue-500">
+          Berita
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="/faq" class="hover:text-blue-500">
+          FAQ
+        </router-link>
+      </li>
       </ul>
-        <button class="hidden md:block text-white px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:to-blue-400 font-semibold">
+    <router-link
+      to="/login"
+      class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-semibold inline-block text-center">
       Login
-    </button>
+    </router-link>
 
       <!-- Hamburger Button -->
       <button 
@@ -35,13 +56,34 @@ const isOpen = ref(false);
     <!-- Menu Mobile -->
     <div v-if="isOpen" class="md:hidden px-6 pb-4">
       <ul class="flex flex-col gap-4 text-gray-700 font-medium">
-        <li>Beranda</li>
-        <li>Kelas</li>
-        <li>Berita</li>
-        <li>FAQ</li>
-      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-semibold">
+      <li>
+        <router-link to="/" class="hover:text-blue-500">
+          Beranda
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="/class" class="hover:text-blue-500">
+          Kelas
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="/news" class="hover:text-blue-500">
+          Berita
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="/faq" class="hover:text-blue-500">
+          FAQ
+        </router-link>
+      </li>
+    <router-link
+      to="/login"
+      class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-semibold inline-block text-center">
       Login
-     </button>
+    </router-link>
       </ul>
     </div>
   </nav>

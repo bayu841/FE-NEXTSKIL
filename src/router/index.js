@@ -1,5 +1,11 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import ClasIndex from "../views/ClasIndex.vue";
+import Faq from "../views/Faq.vue";
+import News from "../views/News.vue";
+
+import LoginView from "../components/auth/LoginView.vue";
+import RegisterView from "../components/auth/RegisterView.vue";
 
 // Admin Views
 import AdminLayout from "../views/admin/Layout.vue";
@@ -67,6 +73,36 @@ const routes = [
     path: "/",
     name: "home",
     component: Home,
+  },
+  {
+    path: "/class",
+    name: "class",
+    component: ClasIndex,
+  },
+  {
+    path: "/faq",
+    name: "faq",
+    component: Faq,
+  },
+  {
+    path: "/news",
+    name: "news",
+    component: News,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginView,
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: RegisterView,
+  },
+  {
+    path: "/news",
+    name: "news",
+    component: News,
   },
   {
     path: "/admin",
