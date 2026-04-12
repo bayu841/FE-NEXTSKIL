@@ -2,18 +2,15 @@
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { 
   CheckCircle2, 
-  XCircle, 
-  HelpCircle, 
-  Trophy, 
-  ArrowRight, 
-  RotateCcw, 
   Info, 
-  ListFilter, 
-  AlertTriangle,
   ShieldAlert,
   Power,
   Maximize2
 } from 'lucide-vue-next'
+
+import QuizDqScreen from './quiz/QuizDqScreen.vue'
+import QuizStartScreen from './quiz/QuizStartScreen.vue'
+import QuizResultScreen from './quiz/QuizResultScreen.vue'
 
 const props = defineProps({
   lesson: {
@@ -208,39 +205,10 @@ onMounted(() => {
   <div class="relative w-full bg-white min-h-[600px] overflow-hidden rounded-3xl" ref="quizContainer">
     
     <!-- DQ SCREEN -->
-    <div v-if="isDisqualified" class="flex flex-col items-center justify-center text-center p-8 md:p-12 bg-red-600 text-white min-h-[600px] rounded-3xl z-[100] relative">
-      <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 border-2 border-white animate-pulse">
-          <ShieldAlert class="w-8 h-8" />
-      </div>
-      <h2 class="text-2xl md:text-3xl font-black mb-3 uppercase tracking-tight leading-none">DISKUALIFIKASI!</h2>
-      <p class="text-red-100 max-w-sm font-medium text-sm md:text-base mb-8">Percobaan curang terdeteksi. Silakan ulangi dari awal.</p>
-      <button @click="restartQuiz" class="px-6 py-3 bg-white text-red-600 font-bold rounded-xl shadow-md active:scale-95 transition-all text-sm">
-        ULANGI UJIAN
-      </button>
-    </div>
+    <QuizDqScreen v-if="isDisqualified" @restart="restartQuiz" />
 
     <!-- START SCREEN -->
-    <div v-else-if="!quizStarted && !isFinished" class="flex flex-col items-center justify-center p-8 md:p-12 text-center min-h-[600px] bg-gradient-to-br from-indigo-50/50 to-white rounded-3xl">
-      <div class="w-20 h-20 bg-indigo-600 rounded-3xl flex items-center justify-center text-white mb-6 shadow-xl shadow-indigo-100">
-        <ShieldAlert class="w-10 h-10" />
-      </div>
-      <h2 class="text-2xl font-bold text-gray-900 mb-2 tracking-tight">Security Access</h2>
-      <p class="text-gray-500 font-medium text-sm mb-8 max-w-sm">Klik tombol di bawah untuk masuk ke mode ujian aman (Layar Penuh).</p>
-      <div class="max-w-sm w-full space-y-3 mb-10 text-left">
-        <div class="bg-white p-3 rounded-lg border border-gray-100 flex gap-2 shadow-sm border-l-4 border-l-indigo-500">
-          <Maximize2 class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
-          <p class="text-xs font-bold text-gray-700">Wajib Mode Fullscreen. Keluar dari fullscreen = Gagal.</p>
-        </div>
-        <div class="bg-white p-3 rounded-lg border border-gray-100 flex gap-2 shadow-sm border-l-4 border-l-red-500">
-          <AlertTriangle class="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-          <p class="text-xs font-bold text-gray-700">Dilarang pindah tab browser atau buka aplikasi lain.</p>
-        </div>
-      </div>
-      <button @click="startExam" class="px-6 py-3 bg-indigo-600 text-white font-bold text-sm rounded-xl shadow-md flex items-center gap-2 hover:bg-indigo-700 active:scale-95 transition-all">
-        MASUK UJIAN
-        <ArrowRight class="w-4 h-4" />
-      </button>
-    </div>
+    <QuizStartScreen v-else-if="!quizStarted && !isFinished" @start="startExam" />
 
     <!-- QUIZ ACTIVE -->
     <div v-else-if="quizStarted && !isFinished" class="flex flex-col h-full min-h-[600px] relative">
@@ -361,28 +329,13 @@ onMounted(() => {
     </div>
 
     <!-- RESULTS -->
-    <div v-else-if="isFinished" class="flex flex-col items-center justify-center p-8 md:p-12 text-center min-h-[600px] bg-white rounded-3xl">
-      <div class="w-20 h-20 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-md shadow-indigo-200">
-        <Trophy class="w-10 h-10" />
-      </div>
-      <h2 class="text-3xl md:text-4xl font-black mb-2 tracking-tight text-gray-900 leading-none">{{ isRemedial ? 'COBA LAGI!' : 'LULUS!' }}</h2>
-      <p class="text-gray-400 font-bold text-xs md:text-sm uppercase tracking-widest mb-8">{{ isRemedial ? 'PELAJARI MATERI KEMBALI' : 'KAMU MEMANG HEBAT!' }}</p>
-      
-      <div class="w-full max-w-xs bg-gray-50 rounded-3xl p-8 mb-10 border border-gray-100 shadow-sm flex flex-col items-center">
-        <span class="text-5xl md:text-6xl font-black text-indigo-600 tracking-tighter leading-none">{{ finalScorePercentage }}</span>
-        <span class="text-xs font-bold text-gray-400 mt-2 tracking-widest text-center block">SKOR AKHIR</span>
-      </div>
-
-      <div class="flex gap-4 w-full max-w-sm pb-10">
-          <button @click="restartQuiz" v-if="!isRemedial" class="flex-1 px-6 py-3 bg-white border border-gray-200 text-gray-600 font-bold rounded-xl hover:bg-gray-50 flex items-center justify-center gap-2 text-sm transition-colors">
-            <RotateCcw class="w-4 h-4" /> ULANGI
-          </button>
-          <button @click="finishQuiz" class="flex-1 px-6 py-3 text-white font-bold text-sm rounded-xl shadow-md transition-all active:scale-95"
-            :class="isRemedial ? 'bg-red-600 shadow-red-200 hover:bg-red-700' : 'bg-indigo-600 shadow-indigo-200 hover:bg-indigo-700'">
-            {{ isRemedial ? 'Mulai Remidi' : 'Lanjutkan' }}
-          </button>
-      </div>
-    </div>
+    <QuizResultScreen 
+      v-else-if="isFinished" 
+      :is-remedial="isRemedial" 
+      :final-score-percentage="finalScorePercentage" 
+      @restart="restartQuiz" 
+      @finish="finishQuiz" 
+    />
   </div>
 </template>
 
