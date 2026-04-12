@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-end">
-  <img src="../assets/images/pattern6.png" alt="" class="w-[180px] ">
+  <img src="../assets/images/pattern6.webp" alt="" class="w-[180px] ">
   </div>
   <section class="text-center px-6 mb-16">
   <p class="text-blue-500 font-medium mb-2">Fitur Unggulan</p>
@@ -66,5 +66,5 @@
     </div>
   </div>
 </section>
-  <img src="../assets/images/pattern7.png" alt="" class="w-[100px] float mb-2 ml-3 ">
+  <img src="../assets/images/pattern7.webp" alt="" class="w-[100px] float mb-2 ml-3 ">
 </template>
