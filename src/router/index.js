@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import ClasIndex from "../views/ClasIndex.vue";
 import Faq from "../views/Faq.vue";
+import News from "../views/News.vue";
 // Admin Views
 import AdminLayout from "../views/admin/Layout.vue";
 import AdminDashboard from "../views/admin/Dashboard.vue";
@@ -77,6 +78,11 @@ const routes = [
     path: "/faq",
     name: "faq",
     component: Faq,
+  },
+  {
+    path: "/news",
+    name: "news",
+    component: News,
   },
   {
     path: "/admin",

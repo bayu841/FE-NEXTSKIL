@@ -78,20 +78,12 @@ const toggleFAQ = (index) => {
       </div>
     </div>
   </section>
-  <div class="flex justify-between items-center px-10 mt-10">
+  <div class="flex justify-end px-10 mt-10">
   
-  <!-- kiri -->
-  <img 
-    src="../../assets/images/pattern4.png" 
-    alt="" 
-    class="w-20 ml-10 mb-5 spin"
-  />
-
-  <!-- kanan -->
   <img 
     src="../../assets/images/pattern3.png" 
     alt="" 
-    class="w-[200px] opacity-60 rotate-[19deg] ml-10"
+    class="w-[200px] opacity-60 rotate-[12deg] ml-10"
   />
 
 </div>
