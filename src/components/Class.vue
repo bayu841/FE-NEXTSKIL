@@ -48,7 +48,7 @@ const classes = [
       text="Jelajahi Kelas Terbaik di Next Skill"
       color="#1d4ed8"
       shineColor="#60a5fa"
-      className="text-3xl font-bold font-poppins pb-6"
+      class="text-3xl font-bold font-poppins pb-6"
     />
 
     <p class="text-gray-500 mb-10 text-sm sm:text-base pt-2 px-5 ">
