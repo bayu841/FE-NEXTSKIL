@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import ClasIndex from "../views/ClasIndex.vue";
 import Faq from "../views/Faq.vue";
 import News from "../views/News.vue";
+import NewsDetail from "../views/NewsDetail.vue";
 import ErrorView from "../views/ErrorView.vue";
 
 import LoginView from "../components/auth/LoginView.vue";
@@ -104,6 +105,11 @@ const routes = [
     path: "/news",
     name: "news",
     component: News,
+  },
+  {
+  path: "/news/:id",
+  name: "news.detail",
+  component: NewsDetail,
   },
   {
     path: "/admin",
