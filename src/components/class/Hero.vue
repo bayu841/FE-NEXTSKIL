@@ -58,11 +58,11 @@ const highlightText = computed(() => {
 
         <div class="mt-6 flex flex-col sm:flex-row justify-center md:justify-start gap-3 sm:gap-4">
           
-          <button class="bg-gradient-to-r from-blue-600 to-indigo-600 
+          <a href="#class" class="bg-gradient-to-r from-blue-600 to-indigo-600 
           text-white px-6 py-3 rounded-lg 
           hover:translate-y-[-4px] transition w-full sm:w-auto">
             Jelajahi Kelas
-          </button>
+          </a>
         </div>
       </div>
 

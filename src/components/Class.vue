@@ -42,7 +42,7 @@ const classes = [
   </div>
 
   <!-- Section -->
-<section class="text-center py-12 bg-gray-50 font-poppins text-gray-800">
+<section class="text-center py-12 bg-gray-50 font-poppins text-gray-800" id="topclass">
     <!-- Title -->
     <ShinyText
       text="Jelajahi Kelas Terbaik di Next Skill"
@@ -111,10 +111,13 @@ const classes = [
 
     </div>
 
-    <!-- Button -->
-    <button class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-xl">
-      Lihat Semua Kelas
-    </button>
+<!-- Button -->
+  <RouterLink
+    to="/class"
+    class="mt-12 inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-xl"
+  >
+    Lihat Semua Kelas
+  </RouterLink>
 
   </section>
 </template>

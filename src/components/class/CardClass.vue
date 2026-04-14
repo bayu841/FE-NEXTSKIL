@@ -44,7 +44,7 @@ const classes = [
 </script>
 
 <template>
-  <section class="text-center pt-6">
+  <section class="text-center pt-6" id="class">
 
     <!-- Title -->
     <ShinyText
