@@ -46,8 +46,9 @@ const newsList = [
   <h2 class="text-3xl font-semibold text-center text-gray-800 mb-2s font-poppins">
     Artikel Dan Berita Terbaru
   </h2>
- <p class="text-gray-600 font-poppins text-sm text-center ">
-    Temukan artikel dan berita terbaru seputar dunia teknologi, pemrograman, dan perkembangan digital lainnya.
+ <p class="text-gray-600 font-poppins text-sm text-center pt-3">
+    Temukan artikel dan berita terbaru seputar dunia teknologi, pemrograman, <br>
+    dan perkembangan digital lainnya.
   </p>
   <section class="max-w-6xl mx-auto px-10 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     

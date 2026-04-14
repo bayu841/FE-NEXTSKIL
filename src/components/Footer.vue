@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M3 10L12 3l9 7v10a1 1 0 0 1-1 1h-6v-6H10v6H4a1 1 0 0 1-1-1z"/>
           </svg>
-          <a href="#" class="hover:text-white transition">Beranda</a>
+          <RouterLink to="/" class="hover:text-white transition">Beranda</RouterLink>
         </li>
 
         <li class="flex items-center gap-2">
@@ -28,7 +28,7 @@
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
             <path d="M20 22V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/>
           </svg>
-          <a href="#" class="hover:text-white transition">Kelas</a>
+          <RouterLink to="/class" class="hover:text-white transition">Kelas</RouterLink>
         </li>
 
         <li class="flex items-center gap-2">
@@ -38,7 +38,7 @@
             <line x1="12" y1="16" x2="12" y2="12"/>
             <line x1="12" y1="8" x2="12.01" y2="8"/>
           </svg>
-          <a href="#" class="hover:text-white transition">Tentang</a>
+          <RouterLink to="/news" class="hover:text-white transition">Berita</RouterLink>
         </li>
 
         <li class="flex items-center gap-2">
@@ -46,7 +46,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
           </svg>
-          <a href="#" class="hover:text-white transition">Kontak</a>
+          <RouterLink to="/faq" class="hover:text-white transition">FAQ</RouterLink>
         </li>
       </ul>
     </div>
