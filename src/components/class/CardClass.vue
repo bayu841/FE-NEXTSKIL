@@ -51,9 +51,11 @@ const classes = [
       text="Jelajahi Kelas"
       color="#3f58ee"
       shineColor="#53c1de"
-      class="text-3xl font-semibold font-poppins pb-6"
+      class="text-3xl font-semibold font-poppins"
     />
-
+    <p class="text-gray-600 font-poppins text-sm py-2">
+      Temukan berbagai macam kelas yang sesuai dengan minat dan keahlian Anda.
+    </p>
     <section class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 px-6 py-6">
 
       <!-- SIDEBAR -->
