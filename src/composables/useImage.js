@@ -31,9 +31,9 @@ export const useImage = () => {
     // Otherwise, construct URL from env storage
     // Remove leading slash if present to avoid double slashes
     let cleanPath = url.startsWith("/") ? url.slice(1) : url;
-    
+
     // Prevent double storage path if backend already includes 'storage/'
-    if (cleanPath.startsWith('storage/')) {
+    if (cleanPath.startsWith("storage/")) {
       cleanPath = cleanPath.substring(8);
     }
 
@@ -47,7 +47,8 @@ export const useImage = () => {
     // Prevent infinite recursion by removing the error listener
     e.target.onerror = null;
     // Set fallback image
-    e.target.src = 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&q=80';
+    e.target.src =
+      "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&q=80";
     e.target.style.display = "block";
   };
 

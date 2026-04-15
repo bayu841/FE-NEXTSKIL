@@ -34,5 +34,3 @@ export const logout = async () => {
     throw error.response ? error.response.data : error;
   }
 };
-
-

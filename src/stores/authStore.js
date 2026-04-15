@@ -1,6 +1,10 @@
 import { defineStore } from "pinia";
 import { useRouter } from "vue-router";
-import { login as loginApi, register as registerApi, logout as logoutApi } from "@/api/auth";
+import {
+  login as loginApi,
+  register as registerApi,
+  logout as logoutApi,
+} from "@/api/auth";
 
 const safeParse = (key) => {
   try {
@@ -18,7 +22,6 @@ export const useAuthStore = defineStore("auth", {
     user: safeParse("user"),
     token: localStorage.getItem("token") || null,
   }),
-
 
   getters: {
     isAuthenticated: (state) => !!state.token,
@@ -80,4 +83,3 @@ export const useAuthStore = defineStore("auth", {
     },
   },
 });
-

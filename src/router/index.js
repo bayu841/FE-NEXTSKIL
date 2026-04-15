@@ -108,9 +108,9 @@ const routes = [
     component: News,
   },
   {
-  path: "/news/:id",
-  name: "news.detail",
-  component: NewsDetail,
+    path: "/news/:id",
+    name: "news.detail",
+    component: NewsDetail,
   },
   {
     path: "/admin",
@@ -312,8 +312,8 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    return { top: 0 }
-  }
+    return { top: 0 };
+  },
 });
 
 router.beforeEach((to, from) => {
