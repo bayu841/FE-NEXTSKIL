@@ -1,10 +1,12 @@
 import { defineStore } from "pinia";
-import { useRouter } from "vue-router";
+import router from "@/router";
 import {
   login as loginApi,
   register as registerApi,
   logout as logoutApi,
 } from "@/api/auth";
+import { removeCookie } from "@/utils/cookies";
+import { useDashboardStore } from "./dashboardStore";
 
 const safeParse = (key) => {
   try {
@@ -31,7 +33,7 @@ export const useAuthStore = defineStore("auth", {
     async login(credentials) {
       try {
         const response = await loginApi(credentials);
-        this.setAuth(response.data); // result is in .data
+        this.setAuth(response.data);
         return response;
       } catch (error) {
         throw error;
@@ -61,6 +63,13 @@ export const useAuthStore = defineStore("auth", {
       } finally {
         // Clear auth AFTER API call
         this.clearAuth();
+        
+        // Clear related stores
+        const dashboardStore = useDashboardStore();
+        dashboardStore.clearDashboard();
+
+        // Redirect to login page
+        router.push("/login");
       }
     },
 
@@ -76,6 +85,7 @@ export const useAuthStore = defineStore("auth", {
       this.token = null;
       localStorage.removeItem("user");
       localStorage.removeItem("token");
+      removeCookie("token");
     },
 
     updateUser(userData) {
