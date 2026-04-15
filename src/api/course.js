@@ -94,3 +94,75 @@ export const getMentorActiveCourses = async (params = {}) => {
     throw error.response ? error.response.data : error;
   }
 };
+
+export const getMyCourses = async () => {
+  try {
+    const response = await API.get("/my-courses");
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};
+
+export const getLessons = async (courseId) => {
+  try {
+    const response = await API.get(`/courses/${courseId}/lessons`);
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};
+
+export const getTasks = async (courseId) => {
+  try {
+    const response = await API.get(`/courses/${courseId}/tasks`);
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};
+
+export const getQuizzes = async (courseId) => {
+  try {
+    const response = await API.get(`/courses/${courseId}/quizzes/student`);
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};
+
+export const submitQuiz = async (quizId, answers) => {
+  try {
+    const response = await API.post(`/quizzes/${quizId}/submit`, { answers });
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};
+
+export const getQuizDetail = async (quizId) => {
+  try {
+    const response = await API.get(`/quizzes/${quizId}`);
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};
+
+export const markLessonComplete = async (lessonId) => {
+  try {
+    const response = await API.post(`/lessons/${lessonId}/mark-complete`);
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};
+
+export const updateLessonProgress = async (lessonId, data = {}) => {
+  try {
+    const response = await API.post(`/lessons/${lessonId}/progress`, data);
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};

@@ -15,17 +15,37 @@ defineProps({
     <div
       class="w-full aspect-video bg-gray-900 relative group flex items-center justify-center isolate overflow-hidden"
     >
-      <img
-        src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=1200&h=675"
-        alt="Video Thumbnail"
-        class="absolute inset-0 w-full h-full object-cover opacity-50"
-      />
+      <!-- Render iframe jika ada video_url, else render placeholder -->
+      <iframe
+        v-if="lesson?.lessonData?.videoUrl"
+        :src="lesson.lessonData.videoUrl"
+        class="absolute inset-0 w-full h-full"
+        title="Video Lesson"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+        "
+        allowfullscreen
+      ></iframe>
 
-      <div
-        class="w-20 h-20 bg-indigo-600/90 backdrop-blur-sm text-white rounded-full flex items-center justify-center cursor-pointer hover:scale-110 hover:bg-indigo-500 transition-all z-10 shadow-[0_0_30px_rgba(79,70,229,0.5)]"
-      >
-        <PlayCircle class="w-10 h-10 ml-1" />
-      </div>
+      <!-- Fallback placeholder -->
+      <template v-else>
+        <img
+          src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=1200&h=675"
+          alt="Video Thumbnail"
+          class="absolute inset-0 w-full h-full object-cover opacity-50"
+        />
+        <div
+          class="w-20 h-20 bg-indigo-600/90 backdrop-blur-sm text-white rounded-full flex items-center justify-center cursor-pointer hover:scale-110 hover:bg-indigo-500 transition-all z-10 shadow-[0_0_30px_rgba(79,70,229,0.5)]"
+        >
+          <PlayCircle class="w-10 h-10 ml-1" />
+        </div>
+      </template>
     </div>
 
     <!-- Video Info -->
@@ -35,6 +55,9 @@ defineProps({
           class="bg-indigo-100 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider"
           >Video Lesson</span
         >
+        <span v-if="lesson?.duration" class="text-sm text-gray-500">{{
+          lesson.duration
+        }}</span>
       </div>
       <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-4">
         {{ lesson?.title }}

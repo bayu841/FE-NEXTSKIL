@@ -21,6 +21,7 @@ const loading = ref(false);
 const isEnrollModalOpen = ref(false);
 const isSuccessModalOpen = ref(false);
 const selectedCourse = ref(null);
+const checkoutSimulationData = ref(null);
 
 const fetchCategories = async () => {
   try {
@@ -89,27 +90,66 @@ const confirmEnrollment = async () => {
 
   try {
     const response = await checkout(selectedCourse.value.id);
+    console.log("Full checkout response:", response);
+
     isEnrollModalOpen.value = false;
 
-    // The response has a 'data' field containing the snap_token
+    // checkout() return response.data, struktur: { snap_token, simulation_data: { signature_key, order_id, gross_amount, ... } }
     const snapToken = response.data?.snap_token;
+    const simulationData = response.data?.simulation_data;
+
+    console.log("Extracted snapToken:", snapToken);
+    console.log("Extracted simulationData:", simulationData);
+
+    // Simpan seluruh simulation_data untuk digunakan di callback
+    checkoutSimulationData.value = simulationData;
 
     if (snapToken) {
       window.snap.pay(snapToken, {
         onSuccess: async function (result) {
           try {
+            // Log payment result untuk debug
+            console.log("Payment Success Result:", result);
+
+            // Gunakan data dari simulation_data yang disimpan saat checkout
+            // Jangan ambil dari result Midtrans karena formatnya bisa berbeda
+            const callbackPayload = {
+              order_id:
+                checkoutSimulationData.value?.order_id || result.order_id,
+              status_code:
+                checkoutSimulationData.value?.status_code || result.status_code,
+              gross_amount:
+                checkoutSimulationData.value?.gross_amount ||
+                result.gross_amount,
+              signature_key: checkoutSimulationData.value?.signature_key,
+              transaction_status:
+                checkoutSimulationData.value?.transaction_status ||
+                result.transaction_status ||
+                "settlement",
+            };
+
+            console.log("Sending callback with payload:", callbackPayload);
+
             // Synchronize with backend callback
-            await handleCallback({
-              order_id: result.order_id,
-              status_code: result.status_code,
-              gross_amount: result.gross_amount,
-              signature_key: result.signature_key,
-              transaction_status: result.transaction_status || "settlement",
-            });
+            const callbackResponse = await handleCallback(callbackPayload);
+            console.log("Callback response:", callbackResponse);
+
             isSuccessModalOpen.value = true;
             fetchCourses(pagination.value.current_page);
           } catch (callbackErr) {
             console.error("Callback sync failed:", callbackErr);
+            // Log error details untuk debug
+            console.error("Error details:", {
+              message: callbackErr.message,
+              response: callbackErr.response?.data || callbackErr.response,
+              status: callbackErr.response?.status,
+            });
+
+            alert(
+              "Pembayaran berhasil namun ada error saat sync: " +
+                (callbackErr.message || "Unknown error"),
+            );
+
             // Even if callback fails, we show success if Snap was successful
             isSuccessModalOpen.value = true;
             fetchCourses(pagination.value.current_page);
