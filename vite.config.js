@@ -10,7 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/zonacoding/",
+  base: "/", 
   build: {
     sourcemap: false,
   },
