@@ -166,3 +166,12 @@ export const updateLessonProgress = async (lessonId) => {
     throw error.response ? error.response.data : error;
   }
 };
+
+export const getMyCertificates = async () => {
+  try {
+    const response = await API.get("/my-certificates");
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+};
