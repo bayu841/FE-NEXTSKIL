@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import { useImage } from "@/composables/useImage";
 
+const { getProxyUrl, handleImageError } = useImage();
 const isVisible = ref(false);
 
 onMounted(() => {
@@ -42,6 +44,7 @@ onMounted(() => {
           src="../assets/images/logo.webp"
           alt="About Image"
           class="w-40 sm:w-56 md:w-80"
+          @error="handleImageError"
         />
       </div>
 
@@ -54,12 +57,8 @@ onMounted(() => {
           >
             Apa Itu ZonaCoding ?
           </h1>
-          <img
-            src="../assets/images/pattern1.webp"
-            alt=""
-            class="w-[69px] float"
-          />
-        </div>
+          <img src="../assets/images/pattern1.webp" alt="" class="w-[69px] float" @error="handleImageError">
+       </div>
         <p class="text-gray-600 mb-4">
           Kami adalah platform pembelajaran online yang membantu kamu belajar
           coding dengan cara yang lebih mudah, cepat, dan menyenangkan.

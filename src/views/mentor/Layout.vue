@@ -1,6 +1,7 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { useAuthStore } from '@/stores/authStore'
 import {
   LayoutDashboard,
   BookOpen,
@@ -14,8 +15,9 @@ import {
   FileCheck,
 } from "lucide-vue-next";
 
-const router = useRouter();
-const route = useRoute();
+const router = useRouter()
+const route = useRoute()
+const authStore = useAuthStore()
 
 // State untuk sidebar desktop (expanded/collapsed)
 const isSidebarOpen = ref(true);
@@ -62,11 +64,12 @@ const toggleDropdown = () => {
   showDropdown.value = !showDropdown.value;
 };
 
-const handleLogout = () => {
-  showDropdown.value = false;
-  closeMobileDrawer();
-  router.push("/");
-};
+const handleLogout = async () => {
+  showDropdown.value = false
+  closeMobileDrawer()
+  await authStore.logout()
+  router.push('/')
+}
 
 // Helper untuk mengecek apakah route saat ini aktif (termasuk nested)
 const isActiveRoute = (item) => {
@@ -214,7 +217,7 @@ const isActiveRoute = (item) => {
             <div
               class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center font-semibold text-sm shadow-[0_2px_8px_rgba(16,185,129,0.2)] ring-2 ring-white/80 group-hover:ring-emerald-200 transition-all"
             >
-              M
+              {{ authStore.user?.name?.charAt(0).toUpperCase() || 'M' }}
             </div>
           </button>
 

@@ -1,17 +1,20 @@
-import api from './index';
+import API from "./index";
 
-export const register = async (userData) => {
+export const login = async (credentials) => {
   try {
-    const response = await api.post('/register', userData);
+    const response = await API.post("/login", credentials);
     return response.data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 };
 
-export const login = async (credentials) => {
+export const register = async (userData) => {
   try {
-    const response = await api.post('/login', credentials);
+    const response = await API.post("/register", {
+      ...userData,
+      role: userData.role || "student",
+    });
     return response.data;
   } catch (error) {
     throw error.response ? error.response.data : error;
@@ -20,9 +23,11 @@ export const login = async (credentials) => {
 
 export const logout = async () => {
   try {
-    const response = await api.post('/logout');
+    const response = await API.post("/logout");
     return response.data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 };
+
+
