@@ -29,17 +29,25 @@ onMounted(() => {
 <template>
   <div class="space-y-6 max-w-5xl mx-auto pb-10">
     <!-- Header Page -->
-    <div class="flex items-start justify-between bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 relative overflow-hidden shadow-lg">
+    <div
+      class="flex items-start justify-between bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 relative overflow-hidden shadow-lg"
+    >
       <div class="relative z-10 text-white">
-        <h1 class="text-3xl font-extrabold mb-2 tracking-tight flex items-center gap-3">
+        <h1
+          class="text-3xl font-extrabold mb-2 tracking-tight flex items-center gap-3"
+        >
           <Trophy class="w-8 h-8 text-amber-300" />
           Papan Peringkat
         </h1>
         <p class="text-blue-100 max-w-xl">Pantau siswa dengan perolehan poin tertinggi di platform NextSkill. Medali emas menanti mereka yang pantang menyerah!</p>
       </div>
       <!-- Background decoration -->
-      <div class="absolute right-0 top-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-      <div class="absolute left-1/2 bottom-0 w-48 h-48 bg-amber-400 opacity-10 rounded-full blur-2xl translate-y-1/2"></div>
+      <div
+        class="absolute right-0 top-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"
+      ></div>
+      <div
+        class="absolute left-1/2 bottom-0 w-48 h-48 bg-amber-400 opacity-10 rounded-full blur-2xl translate-y-1/2"
+      ></div>
     </div>
 
     <!-- Leaderboard Table Section -->
@@ -53,9 +61,13 @@ onMounted(() => {
       </div>
 
       <!-- Feature Header inside card -->
-      <div class="px-6 py-5 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center">
+      <div
+        class="px-6 py-5 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center"
+      >
         <h2 class="font-bold text-gray-800">Top Learner Bulan Ini</h2>
-        <span class="text-xs font-bold text-gray-500 uppercase tracking-wider bg-white border border-gray-200 px-3 py-1 rounded-full shadow-sm">
+        <span
+          class="text-xs font-bold text-gray-500 uppercase tracking-wider bg-white border border-gray-200 px-3 py-1 rounded-full shadow-sm"
+        >
           April 2026
         </span>
       </div>

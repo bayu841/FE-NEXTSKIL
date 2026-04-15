@@ -40,9 +40,9 @@ const { getProxyUrl, handleImageError } = useImage();
         </router-link>
       </li>
       </ul>
-    <router-link
+   <router-link
       to="/login"
-      class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-semibold inline-block text-center">
+      class="hidden md:inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-semibold text-center">
       Login
     </router-link>
 
@@ -81,11 +81,11 @@ const { getProxyUrl, handleImageError } = useImage();
           FAQ
         </router-link>
       </li>
-    <router-link
-      to="/login"
-      class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-semibold inline-block text-center">
-      Login
-    </router-link>
+   <router-link
+    to="/login"
+    class="md:inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-semibold text-center">
+    Login
+  </router-link>
       </ul>
     </div>
   </nav>

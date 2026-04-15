@@ -31,8 +31,8 @@ onMounted(() => {
 })
 
 const openSaveConfirm = () => {
-  isModalOpen.value = true
-}
+  isModalOpen.value = true;
+};
 
 const confirmSave = async () => {
   isModalOpen.value = false
@@ -58,15 +58,21 @@ const confirmSave = async () => {
 <template>
   <div class="space-y-6 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header Page -->
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <div
+      class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
+    >
       <div>
         <h1 class="text-2xl font-bold text-gray-800">Pengaturan Profil</h1>
-        <p class="text-sm text-gray-500 mt-1">Perbarui informasi profil mentor Anda.</p>
+        <p class="text-sm text-gray-500 mt-1">
+          Perbarui informasi profil mentor Anda.
+        </p>
       </div>
     </div>
 
     <!-- Form Section -->
-    <div class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] p-6">
+    <div
+      class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] p-6"
+    >
       <form @submit.prevent="openSaveConfirm" class="space-y-6">
         <div>
           <label class="block text-sm font-bold text-gray-700 mb-2">Nama Lengkap</label>

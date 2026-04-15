@@ -5,11 +5,11 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  resolve: {
+    resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/FE-NEXTSKIL/',
+    base: '/zonacoding/',
 })
 
